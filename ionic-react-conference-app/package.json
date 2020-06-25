@@ -1,0 +1,48 @@
+{
+  "name": "ionic-react-conference-app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@capacitor/core": "^2.1.0",
+    "@ionic/react": "^5.1.1",
+    "@ionic/react-router": "^5.0.7",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^12.12.24",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-router": "^5.1.4",
+    "@types/react-router-dom": "^5.1.3",
+    "ionicons": "^5.0.1",
+    "node-sass": "^4.13.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "typescript": "3.8.3",
+    "reselect": "^4.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "description": "An Ionic project",
+  "devDependencies": {
+    "@capacitor/cli": "^2.1.0",
+    "@types/firebase": "^3.2.1",
+    "@testing-library/react": "9.4.0",
+    "@types/googlemaps": "^3.38.0",
+    "typescript": "3.8.3"
+  }
+}
