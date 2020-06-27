@@ -16,25 +16,9 @@ firebase.initializeApp(firebaseConfig);
 const preObject = document.getElementById('object');
 
 // Create reference
-const dbRefObject = firebase.database().ref().child('elements')
+export const dbRefObject = firebase.database().ref().child('elements')
+export const metalRef = dbRefObject.child('metals')
 
 // Sync object/element Changes
 // dbRefObject.on('value', snap => console.log(snap.val()))
-
-
-export function checkDatabase() {
-// Get Element
-    const preObject = document.getElementById('object');
-
-// Create reference
-    const dbRefObject = firebase.database().ref().child('elements').child('metals')
-
-// Sync object/element Changes
-    dbRefObject.on('value', snap => {
-        // @ts-ignore
-        preObject.innerText = JSON.stringify(snap.val(), null, 3)
-        console.log(snap)
-    })
-
-}
 
