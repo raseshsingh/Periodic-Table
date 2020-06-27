@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import './ChemicalElements.css';
-import {IonRow, IonCol, IonIcon, IonSlide, IonSlides} from "@ionic/react";
-import {getMetals} from "../firebaseConfig";
-import {closeCircle, gameController, gift, heart, homeOutline} from "ionicons/icons";
+import {IonCol, IonRow, IonSlides} from "@ionic/react";
+import {dbRefObject} from "../firebaseConfig";
 
 import '../theme/variables.css';
 import '../theme/bs.css';
@@ -10,30 +9,37 @@ import Slide from "./Slide";
 
 const slideOpts = {slidesPerView: 1.2}
 
-async function waitF() {
-
-    const preObject = document.getElementById('object');
-    // @ts-ignore
-    preObject.innerText = JSON.stringify(getMetals(), null, 3)
-    console.log(getMetals())
-    return await getMetals()
-}
 // @ts-ignore
 class ChemicalElements extends Component {
     constructor() {
         // @ts-ignore
         super();
         this.state = {
-            metals: {}
+            metals: [
+                {
+                    "desc": "s is a chemical element with the symbol Al and atomic number 13. It is a silvery-white, soft, non-magnetic and ductile metal in the boron group. By mass, aluminium makes up about 8% of the Earth's crust, where it is the third most abundant element and also the most abundant metal.",
+                    "img": "https://i.ibb.co/L0CHR8z/four.jpg",
+                    "name": "Aluminium",
+                    "properties": "Aluminum is a shiny, silvery white colored metal that is light in weight and strong. Th density of aluminum is 2.7 g/mL, which means the metal will sink in water, but is still relatively light",
+                    "sign": "Al",
+                    "type": "Very Reactive"
+                }
+            ]
         }
+
         console.log('constructor called')
     }
 
     componentDidMount() {
-        this.setState({
-            metals: waitF()
+        const metalRef = dbRefObject.child('metals')
+        // Sync object/element Changes
+        metalRef.on('value', snap => {
+            this.setState({
+                metals: snap.val()
+            })
+            console.table(this.state.metals)
         })
-// Get Element
+
     }
 
 
@@ -56,23 +62,18 @@ class ChemicalElements extends Component {
                     </IonCol>
                     <IonCol size={'10'}>
                         <IonSlides className={'overflow-visible'} options={slideOpts}>
-
-
-                            <Slide name={'Amricium'} sign={'Rm'} type={'Radioactive'}
-                                   img={'https://i.ibb.co/drTsWdN/Any-Conv-com-ele-11.jpg'}/>
-                            <Slide/>
-                            <Slide/>
-                            <Slide/>
-                            <Slide/>
-                            <Slide/>
-                            <Slide/>
+                            {Object.entries(this.state.metals).map((item) =>
+                                <Slide name={item[1].name} className={'metalSlides'} type={item[1].type}
+                                       img={item[1].img} sign={item[1].sign} key={item[0]}/>
+                            )}
                         </IonSlides>
                     </IonCol>
                 </IonRow>
                 <IonRow className={"overflow-hidden-y"}>
                     <IonCol>
-                        <button className="w-100 btn btn-primary btn-block">Click Me</button>
-                        <pre className="" id='object'></pre>
+
+                        <pre className="" id='object'>{JSON.stringify(this.state.metals, null, 3)}</pre>
+
                     </IonCol>
                 </IonRow>
             </div>

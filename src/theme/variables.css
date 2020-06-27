@@ -22,7 +22,8 @@ http://ionicframework.com/docs/theming/ */
     background-image: url('https://i.ibb.co/tLHy0js/two.jpg');
     background-size: cover;
     min-height: 50vh;
-    width: 90%;
+    background-color: grey;
+    width: 85%;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
@@ -33,7 +34,7 @@ http://ionicframework.com/docs/theming/ */
     /*        0 22.3px 17.9px rgba(122, 8, 52, 0.072),*/
     /*        0 41.8px 33.4px rgba(122, 8, 52, 0.086),*/
     /*        0 100px 80px rgba(122, 8, 52, 0.12)*/
-    box-shadow: 0px 56px 69px -32px rgba(66, 61, 128, 0.5)
+    box-shadow: 0px 50px 70px -32px rgba(66, 61, 128, 0.6)
 }
 
 .type {
