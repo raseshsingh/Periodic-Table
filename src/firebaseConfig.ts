@@ -18,6 +18,9 @@ const preObject = document.getElementById('object');
 // Create reference
 export const dbRefObject = firebase.database().ref().child('elements')
 export const metalRef = dbRefObject.child('metals')
+export const actinideRef = dbRefObject.child('actinide')
+export const nobelGasRef = dbRefObject.child('nobelGas')
+export const nonMetalRef = dbRefObject.child('nonmetals')
 
 // Sync object/element Changes
 // dbRefObject.on('value', snap => console.log(snap.val()))

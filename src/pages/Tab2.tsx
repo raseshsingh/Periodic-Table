@@ -1,28 +1,14 @@
 import React from 'react';
-import {
-    IonContent,
-    IonHeader,
-    IonItem,
-    IonList,
-    IonListHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-    IonLabel,
-    IonNote
-} from '@ionic/react';
-import ExploreContainer from '../components/ChemicalElements';
+import {IonContent, IonItem, IonLabel, IonNote, IonPage} from '@ionic/react';
 import './Tab2.css';
+import MyHeader from "../components/MyHeader";
 
 const Tab2: React.FC = () => {
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>Tab 2</IonTitle>
-                </IonToolbar>
-            </IonHeader>
+
             <IonContent>
+                <MyHeader/>
                 <IonItem>
                     <IonLabel>Primary Note</IonLabel>
                     <IonNote slot="end" color="primary">99</IonNote>

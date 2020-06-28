@@ -1,17 +1,14 @@
 import React from 'react';
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import {IonContent, IonPage} from '@ionic/react';
 import ChemicalElements from '../components/ChemicalElements';
 import './Tab3.css';
+import MyHeader from "../components/MyHeader";
 
 const Tab3: React.FC = () => {
   return (
     <IonPage>
-        <IonHeader no-border>
-            <IonToolbar>
-                <IonTitle>Tab 3</IonTitle>
-            </IonToolbar>
-        </IonHeader>
         <IonContent>
+            <MyHeader/>
             <ChemicalElements/>
         </IonContent>
     </IonPage>
