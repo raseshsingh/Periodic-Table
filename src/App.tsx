@@ -33,7 +33,8 @@ const App: React.FC = () => (
                     <Route path="/tab3" component={Tab3}/>
                     <Route path="/" render={() => <Redirect to="/tab1"/>} exact={true}/>
                 </IonRouterOutlet>
-                <IonTabBar slot="bottom" translucent={true}>
+                <IonTabBar slot="bottom"
+                           className={'position-absolute nav-shadow py-2 bottom-3 w-95 rounded-my tab-l-sm bg-white tab-bar'}>
                     <IonTabButton tab="tab1" href="/tab1">
                         <IonIcon icon={homeOutline}/>
                     </IonTabButton>

@@ -7,7 +7,7 @@ import MyHeader from "../components/MyHeader";
 const Tab1: React.FC = () => {
     return (
         <IonPage>
-            <IonContent>
+            <IonContent className={'bg-white'}>
                 <MyHeader/>
                 <ChemicalElements/>
             </IonContent>

@@ -11,7 +11,7 @@ const slideOpts = {slidesPerView: 1.2}
 
 // @ts-ignore
 class ChemicalElements extends Component {
-    constructor(props: Readonly<{}>) {
+    constructor(props: Readonly<{ metals: any, actinide: any, nonMetals: any }>) {
         // @ts-ignore
         super(props);
         this.state = {
@@ -237,9 +237,18 @@ class ChemicalElements extends Component {
                     </IonCol>
                     <IonCol size={'10'}>
                         <IonSlides className={'overflow-visible'} options={slideOpts}>
-                            {this.state.metals.map((item: string | number | undefined) =>
-                                <Slide name={item.name} className={'metalSlides'} type={item.type}
-                                       img={item.img} sign={item.sign} shadow={item.shadow} key={item}/>
+                            {this.state.metals.map((item: {
+                                    properties: any;
+                                    desc: any;
+                                    name: string;
+                                    type: any;
+                                    img: any;
+                                    sign: any;
+                                    shadow: any;
+                                }, index: number) =>
+                                    <Slide name={item.name} className={'metalSlides'} type={item.type}
+                                           img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
+                                           properties={item.properties} key={index}/>
                             )}
                         </IonSlides>
                     </IonCol>
@@ -248,13 +257,18 @@ class ChemicalElements extends Component {
                 {/*--------------------------NON METALS--------------------------*/}
                 <IonRow className={'my-4'}>
                     <IonCol size={'2'} className={"bg-white zindex-100"}>
-                        <b className={'rotated even'}>NONMETAlS</b>
+                        <b className={'rotated even'}>NON&nbsp;METALS</b>
                     </IonCol>
                     <IonCol size={'10'}>
                         <IonSlides className={'overflow-visible'} options={slideOpts}>
-                            {this.state.nonMetals.map((item) =>
-                                <Slide name={item.name} className={'metalSlides'} type={item.type}
-                                       img={item.img} sign={item.sign} shadow={item.shadow} key={item}/>
+                            {this.state.nonMetals.map((item: {
+                                    desc: any;
+                                    properties: any;
+                                    name: string; type: string; img: string; sign: string; shadow: string;
+                                }, index: number) =>
+                                    <Slide name={item.name} className={'metalSlides'} type={item.type}
+                                           img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
+                                           properties={item.properties} key={index}/>
                             )}
                         </IonSlides>
                     </IonCol>
@@ -268,9 +282,14 @@ class ChemicalElements extends Component {
                     </IonCol>
                     <IonCol size={'10'}>
                         <IonSlides className={'overflow-visible'} options={slideOpts}>
-                            {this.state.actinide.map((item) =>
-                                <Slide name={item.name} className={'metalSlides'} type={item.type}
-                                       img={item.img} sign={item.sign} shadow={item.shadow} key={item}/>
+                            {this.state.actinide.map((item: {
+                                    properties: any;
+                                    desc: any;
+                                    name: any; type: any; img: any; sign: any; shadow: any;
+                                }, index: number) =>
+                                    <Slide name={item.name} className={'metalSlides'} type={item.type}
+                                           img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
+                                           properties={item.properties} key={index}/>
                             )}
                         </IonSlides>
                     </IonCol>
@@ -279,13 +298,18 @@ class ChemicalElements extends Component {
                 {/*--------------------------NOBEL GASES--------------------------*/}
                 <IonRow className={'mb-2'}>
                     <IonCol size={'2'} className={"bg-white zindex-100"}>
-                        <b className={'rotated even'}>NOBELGASES</b>
+                        <b className={'rotated even'}>NOBEL&nbsp;GASES</b>
                     </IonCol>
                     <IonCol size={'10'}>
                         <IonSlides className={'overflow-visible'} options={slideOpts}>
-                            {this.state.nobelGas.map((item) =>
-                                <Slide name={item.name} className={'metalSlides'} type={item.type}
-                                       img={item.img} sign={item.sign} shadow={item.shadow} key={item}/>
+                            {this.state.nobelGas.map((item: {
+                                    properties: any;
+                                    desc: any;
+                                    name: any; type: any; img: any; sign: any; shadow: any;
+                                }, index: number) =>
+                                    <Slide name={item.name} className={'metalSlides'} type={item.type}
+                                           img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
+                                           properties={item.properties} key={index}/>
                             )}
                         </IonSlides>
                     </IonCol>
