@@ -27,7 +27,7 @@ class Slide extends Component {
                         <IonIcon icon={information} onClick={() => this.setState({showModal: true})}
                                  className={'align-bottom p-1 text-white display-4'}/>
                         <IonModal animated={true} isOpen={this.state.showModal} cssClass='my-custom-class'>
-                            <div className="w-100 overflow-auto bg-size--cover"
+                            <div className="w-100 min-vh-100 overflow-auto bg-size--cover"
                                  style={{backgroundImage: `url(${img})`}}>
                                 <div className="position-relative m-3">
                                     <div

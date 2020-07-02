@@ -34,14 +34,14 @@ const App: React.FC = () => (
                     <Route path="/" render={() => <Redirect to="/tab1"/>} exact={true}/>
                 </IonRouterOutlet>
                 <IonTabBar slot="bottom"
-                           className={'position-absolute nav-shadow py-2 bottom-3 w-95 rounded-my tab-l-sm bg-white tab-bar'}>
-                    <IonTabButton tab="tab1" href="/tab1">
+                           className={'position-absolute nav-shadow py-2 w-100 bg-white tab-bar'}>
+                    <IonTabButton className={'no-ripple'} tab="tab1" href="/tab1">
                         <IonIcon icon={homeOutline}/>
                     </IonTabButton>
-                    <IonTabButton tab="tab2" href="/tab2">
+                    <IonTabButton className={'no-ripple'} tab="tab2" href="/tab2">
                         <IonIcon icon={planetOutline}/>
                     </IonTabButton>
-                    <IonTabButton tab="tab3" href="/tab3">
+                    <IonTabButton className={'no-ripple'} tab="tab3" href="/tab3">
                         <IonIcon icon={bookmarkOutline}/>
                     </IonTabButton>
                 </IonTabBar>

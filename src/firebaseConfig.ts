@@ -19,7 +19,7 @@ export const metalRef = dbRefObject.child('metals')
 export const actinideRef = dbRefObject.child('actinide')
 export const nobelGasRef = dbRefObject.child('nobelGas')
 export const nonMetalRef = dbRefObject.child('nonmetals')
-export const allElements = dbRefObject.child('allelements')
+export const allElements = dbRefObject.child('symbols')
 
 // Sync object/element Changes
 // dbRefObject.on('value', snap => console.log(snap.val()))

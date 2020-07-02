@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {IonCol, IonIcon, IonModal, IonRouterLink, IonRow} from '@ionic/react';
-import {arrowBack, logoCapacitor, logoFirebase, logoIonic} from "ionicons/icons";
+import {arrowBack, logoCapacitor, logoFirebase, logoIonic, logoReact} from "ionicons/icons";
 
 const MyHeader: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
@@ -26,8 +26,17 @@ const MyHeader: React.FC = () => {
                                      className={'blur-bg align-bottom p-1 text-white display-4'}/>
                         </div>
                     </div>
-                    <div className="row m-3 mt-9">
-                        <div className="card w-100 shadow-none">
+
+                    <div className={'py-3 mt-7 m-3'}>
+                        <IonRow className={''}>
+                            <IonCol>
+                                <span
+                                    className={'display-2 fw-light text-dark primary_heading'}>Technology <br/><b>stack</b></span>
+                            </IonCol>
+                        </IonRow>
+                    </div>
+                    <div className="row m-3 ">
+                        <div className="card w-100 shadow-none mb-3">
                             <div className="p-3 d-flex">
                                 <div>
                                     <div className="icon icon-shape rounded-circle bg-primary text-white mr-4">
@@ -40,7 +49,7 @@ const MyHeader: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="card w-100 shadow-none">
+                        <div className="card w-100 shadow-none mb-3">
                             <div className="p-3 d-flex">
                                 <div>
                                     <div className="icon icon-shape rounded-circle bg-warning text-white mr-4">
@@ -54,7 +63,7 @@ const MyHeader: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="card w-100 shadow-none">
+                        <div className="card w-100 shadow-none mb-3">
                             <div className="p-3 d-flex">
                                 <div>
                                     <div className="icon icon-shape rounded-circle bg-dark text-white mr-4">
@@ -62,7 +71,7 @@ const MyHeader: React.FC = () => {
                                              height="26"
                                              aria-labelledby="unsplash-home" aria-hidden="false">
                                             <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"
-                                                  style={{fill: 'white'}}></path>
+                                                  style={{fill: 'white'}}/>
                                         </svg>
                                     </div>
                                 </div>
@@ -74,7 +83,7 @@ const MyHeader: React.FC = () => {
                         </div>
 
 
-                        <div className="card w-100 shadow-none">
+                        <div className="card w-100 shadow-none mb-3">
                             <div className="p-3 d-flex">
                                 <div>
                                     <div className="icon icon-shape rounded-circle bg-success text-white mr-4">
@@ -87,7 +96,22 @@ const MyHeader: React.FC = () => {
                                 </div>
                             </div>
                         </div>
+
+                        <div className="card w-100 shadow-none mb-3">
+                            <div className="p-3 d-flex">
+                                <div>
+                                    <div className="icon icon-shape rounded-circle bg-gradient-primary text-white mr-4">
+                                        <IonIcon className={'display-3 text-white'} icon={logoReact}/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span className="h6">React</span>
+                                    <p className="text-sm text-muted mb-0">Ionic's supported UI library</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </IonModal>
         </IonRow>
