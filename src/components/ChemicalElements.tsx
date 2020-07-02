@@ -9,179 +9,217 @@ import Slide from "./Slide";
 
 const slideOpts = {slidesPerView: 1.2}
 
+type MyProps = {}
+type MyState = {
+    metals: SlideProps[],
+    actinide: SlideProps[],
+    nonMetals: SlideProps[],
+    nobelGas: SlideProps[],
+}
+type SlideProps = {
+    elname: string,
+    desc: string,
+    img: string,
+    properties: string,
+    type: string,
+    shadow: string,
+    sign: string,
+}
+
+
 // @ts-ignore
-class ChemicalElements extends Component {
-    constructor(props: Readonly<{ metals: any, actinide: any, nonMetals: any }>) {
+class ChemicalElements extends Component<SlideProps, MyState> {
+    constructor() {
         // @ts-ignore
-        super(props);
+        super();
         this.state = {
             metals: [
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
-                },
+                    "type": "",
+                    "shadow": ""
+                }
             ],
             actinide: [
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
-                },
+                    "type": "",
+                    "shadow": ""
+                }
             ],
             nonMetals: [
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
-                },
+                    "type": "",
+                    "shadow": ""
+                }
             ],
             nobelGas: [
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
+                    "type": "",
+                    "shadow": ""
                 },
                 {
                     "desc": "",
                     "img": "",
-                    "name": "",
+                    "elname": "",
                     "properties": "",
                     "sign": "",
-                    "type": ""
-                },
+                    "type": "",
+                    "shadow": ""
+                }
             ]
         }
 
@@ -237,18 +275,10 @@ class ChemicalElements extends Component {
                     </IonCol>
                     <IonCol size={'10'}>
                         <IonSlides className={'overflow-visible'} options={slideOpts}>
-                            {this.state.metals.map((item: {
-                                    properties: any;
-                                    desc: any;
-                                    name: string;
-                                    type: any;
-                                    img: any;
-                                    sign: any;
-                                    shadow: any;
-                                }, index: number) =>
-                                    <Slide name={item.name} className={'metalSlides'} type={item.type}
-                                           img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
-                                           properties={item.properties} key={index}/>
+                            {this.state.metals.map((item, index: number) =>
+                                <Slide elname={item.elname} type={item.type}
+                                       img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
+                                       properties={item.properties} key={index}/>
                             )}
                         </IonSlides>
                     </IonCol>
@@ -261,14 +291,10 @@ class ChemicalElements extends Component {
                     </IonCol>
                     <IonCol size={'10'}>
                         <IonSlides className={'overflow-visible'} options={slideOpts}>
-                            {this.state.nonMetals.map((item: {
-                                    desc: any;
-                                    properties: any;
-                                    name: string; type: string; img: string; sign: string; shadow: string;
-                                }, index: number) =>
-                                    <Slide name={item.name} className={'metalSlides'} type={item.type}
-                                           img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
-                                           properties={item.properties} key={index}/>
+                            {this.state.nonMetals.map((item, index: number) =>
+                                <Slide elname={item.elname} type={item.type}
+                                       img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
+                                       properties={item.properties} key={index}/>
                             )}
                         </IonSlides>
                     </IonCol>
@@ -282,14 +308,10 @@ class ChemicalElements extends Component {
                     </IonCol>
                     <IonCol size={'10'}>
                         <IonSlides className={'overflow-visible'} options={slideOpts}>
-                            {this.state.actinide.map((item: {
-                                    properties: any;
-                                    desc: any;
-                                    name: any; type: any; img: any; sign: any; shadow: any;
-                                }, index: number) =>
-                                    <Slide name={item.name} className={'metalSlides'} type={item.type}
-                                           img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
-                                           properties={item.properties} key={index}/>
+                            {this.state.actinide.map((item, index: number) =>
+                                <Slide elname={item.elname} type={item.type}
+                                       img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
+                                       properties={item.properties} key={index}/>
                             )}
                         </IonSlides>
                     </IonCol>
@@ -302,14 +324,10 @@ class ChemicalElements extends Component {
                     </IonCol>
                     <IonCol size={'10'}>
                         <IonSlides className={'overflow-visible'} options={slideOpts}>
-                            {this.state.nobelGas.map((item: {
-                                    properties: any;
-                                    desc: any;
-                                    name: any; type: any; img: any; sign: any; shadow: any;
-                                }, index: number) =>
-                                    <Slide name={item.name} className={'metalSlides'} type={item.type}
-                                           img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
-                                           properties={item.properties} key={index}/>
+                            {this.state.nobelGas.map((item, index: number) =>
+                                <Slide elname={item.elname} type={item.type}
+                                       img={item.img} sign={item.sign} shadow={item.shadow} desc={item.desc}
+                                       properties={item.properties} key={index}/>
                             )}
                         </IonSlides>
                     </IonCol>

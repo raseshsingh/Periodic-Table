@@ -9,7 +9,9 @@ const Tab1: React.FC = () => {
         <IonPage>
             <IonContent className={'bg-white'}>
                 <MyHeader/>
-                <ChemicalElements/>
+                <ChemicalElements elname={"item.elname"} type={'item.type'}
+                                  img={"item.img"} sign={"item.sign"} shadow={'item.shadow'} desc={'item.desc'}
+                                  properties={'item.properties'}/>
             </IonContent>
         </IonPage>
     );

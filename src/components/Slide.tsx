@@ -7,8 +7,24 @@ import '../theme/variables.css';
 import '../theme/bs.css';
 import {arrowBack, cube, flask, information, planet} from "ionicons/icons";
 
-class Slide extends Component {
-    constructor(props: Readonly<{}>) {
+type MyProps = {
+
+    properties: string;
+    desc: string;
+    elname: string;
+    type: string;
+    img: string;
+    sign: string;
+    shadow: string;
+}
+type Mystate = {
+    showModal: boolean,
+    setShowModal: boolean
+}
+
+
+class Slide extends Component<MyProps, Mystate> {
+    constructor(props: MyProps) {
         super(props);
         this.state = {
             showModal: false,
@@ -18,7 +34,8 @@ class Slide extends Component {
 
     render() {
         // @ts-ignore
-        const {name, img, type, sign, shadow, desc, properties} = this.props;
+        const {elname, img, type, sign, shadow, desc, properties} = this.props;
+        // @ts-ignore
         return (
             <IonSlide>
                 <div className="slide text-left mb-7 position-relative"
@@ -51,7 +68,7 @@ class Slide extends Component {
                                     </div>
                                     <div className="col-12">
                                         <h2 className="text-white p-0 m-0 display-4">
-                                            {name}
+                                            {elname}
                                         </h2>
                                     </div>
                                 </div>
@@ -104,7 +121,7 @@ class Slide extends Component {
                             {type}
                         </p>
                         <h3 className="text-white p-0 m-0 display-4">
-                            {name}
+                            {elname}
                         </h3>
                     </div>
                 </div>
